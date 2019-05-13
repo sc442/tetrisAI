@@ -6,6 +6,9 @@ public abstract class Block {
 
     public void rotateCW(){
         int n = piece.length;
+
+        if(n != piece[1].length) return;
+
         int rotated[][] = new int[n][n];
 
         for(int i = 0; i < n; i++){
@@ -20,6 +23,9 @@ public abstract class Block {
     public void rotateCCW(){
         int n = piece.length;
         int rotated[][] = new int[n][n];
+
+        if(n != piece[1].length) return;
+
 
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){

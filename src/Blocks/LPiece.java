@@ -1,6 +1,5 @@
 package Blocks;
 
-
 public class LPiece extends Block {
 
     public LPiece(){
