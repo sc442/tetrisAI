@@ -36,7 +36,7 @@ public abstract class Block {
         piece = rotated;
     }
 
-    public int[][] returnBlock() {
+    public int[][] returnBlockArray() {
         return piece;
     }
 

@@ -5,20 +5,36 @@ public class Player {
     public static void main(String[] args) {
         Grid grid = new Grid(10,20);
 
-        OPiece l = new OPiece();
+        LPiece l = new LPiece();
 
-        l.printBlock();
+        grid.insertBlock(l);
 
-        l.rotateCW();
+        grid.printGrid();
+
+        grid.moveRight();
+
         System.out.println();
-        l.printBlock();
 
-        l.rotateCW();
-        System.out.println();
-        l.printBlock();
+        grid.printGrid();
 
-        l.rotateCW();
+        grid.moveLeft();
+
         System.out.println();
-        l.printBlock();
+
+        grid.printGrid();
+
+//        l.printBlock();
+//
+//        l.rotateCW();
+//        System.out.println();
+//        l.printBlock();
+//
+//        l.rotateCW();
+//        System.out.println();
+//        l.printBlock();
+//
+//        l.rotateCW();
+//        System.out.println();
+//        l.printBlock();
     }
 }
