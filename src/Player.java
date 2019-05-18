@@ -5,22 +5,29 @@ public class Player {
     public static void main(String[] args) {
         Grid grid = new Grid(10,20);
 
+        SPiece s = new SPiece();
         LPiece l = new LPiece();
 
-        grid.insertBlock(l);
+        s.rotateCW();
 
+        grid.insertBlock(s);
+
+        grid.printGrid();
+
+        grid.hardDrop();
+        grid.printGrid();
+
+        l.rotateCCW();
+        grid.insertBlock(l);
         grid.printGrid();
 
         grid.moveRight();
-
-        System.out.println();
-
         grid.printGrid();
 
-        grid.moveLeft();
+        grid.moveRight();
+        grid.printGrid();
 
-        System.out.println();
-
+        grid.hardDrop();
         grid.printGrid();
 
 //        l.printBlock();
