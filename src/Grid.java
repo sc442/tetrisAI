@@ -25,6 +25,10 @@ public class Grid {
         return returnmatrix;
     }
 
+    public int[][] getMatrix(){
+        return matrix;
+    }
+
     public void insertBlock(Block b){
         activeBlock = b;
         blockColumn = 0;
