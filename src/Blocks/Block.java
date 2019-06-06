@@ -1,51 +1,50 @@
 package Blocks;
 
+import javafx.util.Pair;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Block {
 
-    protected int piece[][];
+    protected ArrayList<Pair<Integer,Integer>> squares;
+    protected int state;
+    protected int cc;   // Current Column
+
+    public static final int STARTING_COLUMN = 4;
+
+    public Block(){
+        state = 0;
+        cc = STARTING_COLUMN;
+    }
+
+    abstract void updateSquares();
+
+    public void moveLeft(){
+        cc--;
+        updateSquares();
+    }
+
+    public void moveRight(){
+        cc++;
+        updateSquares();
+    }
 
     public void rotateCW(){
-        int n = piece.length;
+        if(state == 3) state = 0;
+        else state++;
 
-        if(n != piece[1].length) return;
-
-        int rotated[][] = new int[n][n];
-
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                rotated[i][j] = piece[n-j-1][i];
-            }
-        }
-
-        piece = rotated;
+        updateSquares();
     }
 
     public void rotateCCW(){
-        int n = piece.length;
-        int rotated[][] = new int[n][n];
+        if(state == 0) state = 3;
+        else state--;
 
-        if(n != piece[1].length) return;
-
-
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n; j++){
-                rotated[i][j] = piece[j][n-i-1];
-            }
-        }
-
-        piece = rotated;
+        updateSquares();
     }
 
-    public int[][] returnBlockArray() {
-        return piece;
-    }
-
-    public void printBlock(){
-        for(int i = 0; i < piece.length; i++){
-            for(int j = 0; j < piece[i].length; j++){
-                System.out.print(piece[i][j] + " ");
-            }
-            System.out.printf("\n");
-        }
+    public List<Pair<Integer,Integer>> getSquares(){
+        return squares;
     }
 }

@@ -22,8 +22,9 @@ public class Main extends Application {
 
 
         grid = new Grid(10,20);
-        LPiece l = new LPiece();
+        ZPiece l = new ZPiece();
         grid.insertBlock(l);
+//        grid.getNonZeroColumnLeft();
 
         gridPane = new GridPane();
         gridPane.setHgap(1);
@@ -48,11 +49,18 @@ public class Main extends Application {
             grid.moveLeft();
             updateGridPane();
         }
-        if(e.getCode() == KeyCode.SPACE){
-            grid.hardDrop();
+//        if(e.getCode() == KeyCode.SPACE){
+//            grid.hardDrop();
+//            updateGridPane();
+//        }
+        if(e.getCode() == KeyCode.Z){
+            grid.rotateCCW();
             updateGridPane();
         }
-
+        if(e.getCode() == KeyCode.X){
+            grid.rotateCW();
+            updateGridPane();
+        }
 
     }
 
@@ -67,6 +75,10 @@ public class Main extends Application {
                 gridPane.add(rec, j, i);
             }
         }
+    }
+
+    private void getRandomPiece(){
+
     }
 
     public static void main(String[] args) {
