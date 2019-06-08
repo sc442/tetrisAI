@@ -10,12 +10,14 @@ public abstract class Block {
     protected ArrayList<Pair<Integer,Integer>> squares;
     protected int state;
     protected int cc;   // Current Column
+    protected int cr;   // Current row
 
     public static final int STARTING_COLUMN = 4;
 
     public Block(){
         state = 0;
         cc = STARTING_COLUMN;
+        cr = 0;
     }
 
     abstract void updateSquares();
@@ -40,6 +42,12 @@ public abstract class Block {
     public void rotateCCW(){
         if(state == 0) state = 3;
         else state--;
+
+        updateSquares();
+    }
+
+    public void drop(int i){
+        cr = cr + i;
 
         updateSquares();
     }

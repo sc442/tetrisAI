@@ -2,6 +2,8 @@ import Blocks.Block;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Grid {
 
@@ -75,58 +77,69 @@ public class Grid {
 
     private void updateMatrix(){
         ArrayList<Pair<Integer,Integer>> squares = (ArrayList)activeBlock.getSquares();
+
+        System.out.println("Grid before putting in squares");
+        printGrid();
+
+        System.out.println("Square count: " + squares.size());
         for(Pair<Integer,Integer> p: squares){
             int x = p.getKey();
             int y = p.getValue();
 
             matrix[x][y] = 1;
         }
+        System.out.println("Grid after putting in squares");
+        printGrid();
+        List<Integer> filledRows = getFilledRows();
+        if(filledRows.size() != 0) clearFilledRows(filledRows);
     }
 
+    private List<Integer> getFilledRows(){
+        ArrayList<Integer> rowsToClear = new ArrayList<>();
 
-    //TODO: Update hard drop
-//    public void hardDrop(){
-//        // For each column that block is in to column that it ends
-//        // Count the difference between the block and the lowest point
-//        // Shift block down by the lowest possible distance
-//
-//        int blockarray[][] = activeBlock.returnBlockArray();
-//
-//        int shortestDistance = BIGNUM;         // Arbitrary large number
-//
-//        for(int j = blockColumn; j < blockColumn + blockarray[0].length; j++){
-//            int tempDist = BIGNUM;
-//            int startcounting = 0;
-//
-//            //start counting if one
-//            for(int i = 0; i < matrix.length; i++){
-//                if(startcounting == 0 && matrix[i][j] == 1) startcounting = 1;    // Dont count 0's til it sees a block
-//                if(startcounting == 1 && matrix[i][j] == 0) {
-//                    startcounting = 2;    // Start counting when it sees 0's again
-//                    tempDist = 0;
-//                }
-//
-//                if(startcounting == 2 && matrix[i][j] == 0) tempDist++;
-//
-//                if(startcounting == 2 && matrix[i][j] == 1) startcounting = 3;
-//                // Stop counting entirely when it sees a 1 again after counting 0's
-//
-//            }
-//            if(tempDist < shortestDistance) shortestDistance = tempDist;
-//        }
-//
-//        System.out.println(shortestDistance);
-//        // Take this shortestdistance and shift all the 1's down that many times.
-//
-//        for(int j = blockColumn; j < blockColumn + blockarray[0].length; j++){
-//            for(int i = 0; i < blockarray.length; i++){
-//                if(matrix[i][j] == 1){
-//                    matrix[i + shortestDistance][j] = 1;
-//                    matrix[i][j] = 0;
-//                }
-//            }
-//        }
-//    }
+        for(int i = 0; i < matrix.length; i++){
+            int squares = 0;
+            for(int j = 0; j < matrix[0].length; j++){
+                if(matrix[i][j] == 1) squares++;
+            }
+            if(squares == matrix[0].length) rowsToClear.add(i);
+        }
+
+        return rowsToClear;
+    }
+
+    private void clearFilledRows(List<Integer> rows){
+        for(int r: rows){
+            for(int i = r; i > 0; i--){
+                matrix[i] = Arrays.copyOf(matrix[i-1], matrix[i-1].length);
+            }
+        }
+    }
+
+    public void hardDrop(){
+        // For each column that block is in to column that it ends
+        // Count the difference between the block and the lowest possible point
+        // Shift block down by the lowest possible distance
+
+        ArrayList<Pair<Integer, Integer>> squares = (ArrayList)activeBlock.getSquares();
+
+        int shortestDistance = BIGNUM;
+
+        for(Pair<Integer, Integer> b: squares){
+            int r = b.getKey();
+            int c = b.getValue();
+
+            int distance = 0;
+
+            for(int i = r+1; i < matrix.length; i++, distance++){
+                if(matrix[i][c] == 1 && !squares.contains(new Pair<>(i,c))) break;
+            }
+            if(distance < shortestDistance) shortestDistance = distance;
+        }
+        clearBlockFromMatrix();
+        activeBlock.drop(shortestDistance);
+        updateMatrix();
+    }
 
     public void printGrid(){
         for(int i = 0; i < matrix.length; i++){

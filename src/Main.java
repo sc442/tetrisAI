@@ -10,6 +10,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import Blocks.*;
 
+import java.util.Random;
+
 
 public class Main extends Application {
 
@@ -18,19 +20,19 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        setUp(primaryStage);
+        playGame();
+    }
+
+    private void setUp(Stage primaryStage){
         primaryStage.setTitle("TetrisAI");
 
 
         grid = new Grid(10,20);
-        ZPiece l = new ZPiece();
-        grid.insertBlock(l);
-//        grid.getNonZeroColumnLeft();
 
         gridPane = new GridPane();
         gridPane.setHgap(1);
         gridPane.setVgap(1);
-
-        updateGridPane();
 
         Scene scene = new Scene(gridPane, 300, 450);
 
@@ -38,6 +40,12 @@ public class Main extends Application {
         primaryStage.show();
 
         scene.setOnKeyPressed(e->keyPressHandler(e));
+    }
+
+    private void playGame(){                // For now, gets a random piece and inserts it into grid
+        Block block = getRandomPiece();
+        grid.insertBlock(block);
+        updateGridPane();
     }
 
     private void keyPressHandler(KeyEvent e) {
@@ -49,10 +57,11 @@ public class Main extends Application {
             grid.moveLeft();
             updateGridPane();
         }
-//        if(e.getCode() == KeyCode.SPACE){
-//            grid.hardDrop();
-//            updateGridPane();
-//        }
+        if(e.getCode() == KeyCode.SPACE){
+            grid.hardDrop();
+            updateGridPane();
+            playGame();
+        }
         if(e.getCode() == KeyCode.Z){
             grid.rotateCCW();
             updateGridPane();
@@ -77,8 +86,28 @@ public class Main extends Application {
         }
     }
 
-    private void getRandomPiece(){
+    private Block getRandomPiece(){
+        Random rand = new Random();
+        int randomNum = rand.nextInt(7);
 
+        switch(randomNum){
+            case 0:
+                return new IPiece();
+            case 1:
+                return new JPiece();
+            case 2:
+                return new LPiece();
+            case 3:
+                return new OPiece();
+            case 4:
+                return new SPiece();
+            case 5:
+                return new TPiece();
+            case 6:
+                return new ZPiece();
+            default:
+                return new TPiece();
+        }
     }
 
     public static void main(String[] args) {
