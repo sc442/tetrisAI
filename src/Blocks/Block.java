@@ -12,7 +12,10 @@ public abstract class Block {
     protected int cc;   // Current Column
     protected int cr;   // Current row
 
-    public static final int STARTING_COLUMN = 4;
+    public static final int STARTING_COLUMN = 3;
+
+    public static final int FIRST_COLUMN = 0;
+    public static final int LAST_COLUMN = 9;
 
     public Block(){
         state = 0;
@@ -22,14 +25,32 @@ public abstract class Block {
 
     abstract void updateSquares();
 
+    public boolean isLeftmost(){
+        for(Pair<Integer,Integer> s: squares){
+            if(s.getValue() == FIRST_COLUMN) return true;
+        }
+        return false;
+    }
+
+    public boolean isRightmost(){
+        for(Pair<Integer,Integer> s: squares){
+            if(s.getValue() == LAST_COLUMN) return true;
+        }
+        return false;
+    }
+
     public void moveLeft(){
-        cc--;
-        updateSquares();
+        if(!isLeftmost()) {
+            cc--;
+            updateSquares();
+        }
     }
 
     public void moveRight(){
-        cc++;
-        updateSquares();
+        if(!isRightmost()) {
+            cc++;
+            updateSquares();
+        }
     }
 
     public void rotateCW(){
@@ -44,6 +65,10 @@ public abstract class Block {
         else state--;
 
         updateSquares();
+    }
+
+    public int getState(){
+        return state;
     }
 
     public void drop(int i){

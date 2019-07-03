@@ -10,10 +10,15 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import Blocks.*;
 
+import java.util.List;
 import java.util.Random;
 
 
 public class Main extends Application {
+
+    private static final int COLUMN_COUNT = 10;
+    private static final int ROW_COUNT = 20;
+
 
     GridPane gridPane;
     Grid grid;
@@ -28,7 +33,7 @@ public class Main extends Application {
         primaryStage.setTitle("TetrisAI");
 
 
-        grid = new Grid(10,20);
+        grid = new Grid(ROW_COUNT,COLUMN_COUNT);
 
         gridPane = new GridPane();
         gridPane.setHgap(1);
@@ -46,6 +51,8 @@ public class Main extends Application {
         Block block = getRandomPiece();
         grid.insertBlock(block);
         updateGridPane();
+
+        grid.generateNodes();
     }
 
     private void keyPressHandler(KeyEvent e) {
@@ -70,6 +77,16 @@ public class Main extends Application {
             grid.rotateCW();
             updateGridPane();
         }
+
+    }
+
+    private void playBestMove(List<Node> nodes){
+        Node bestNode = null;
+        for(Node n : nodes){
+            // Get the best node with the lowest heuristic
+            bestNode = (bestNode==null || n.getHeuristic() < bestNode.getHeuristic()) ? n:bestNode;
+        }
+
 
     }
 
@@ -109,6 +126,8 @@ public class Main extends Application {
                 return new TPiece();
         }
     }
+
+
 
     public static void main(String[] args) {
         launch(args);

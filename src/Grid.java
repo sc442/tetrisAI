@@ -18,11 +18,26 @@ public class Grid {
 
     }
 
-    private int[][] initializeMatrix(int r, int c){
-        int returnmatrix[][] = new int[c][r];
+//    public Grid(Grid g){
+//        matrix = copyMatrix(g.getMatrix());
+//        activeBlock =
+//    }
 
-        for(int i = 0; i < c; i++){
-            for(int j = 0; j < r; j++){
+    private int[][] copyMatrix(int[][] m){
+        int copy[][] = new int[m.length][m[0].length];
+
+        for(int i = 0; i < m.length; i++){
+            copy[i] = Arrays.copyOf(m[i], m[i].length);
+        }
+
+        return copy;
+    }
+
+    private int[][] initializeMatrix(int r, int c){
+        int returnmatrix[][] = new int[r][c];
+
+        for(int i = 0; i < r; i++){
+            for(int j = 0; j < c; j++){
                 returnmatrix[i][j] = 0;
             }
         }
@@ -38,7 +53,10 @@ public class Grid {
         activeBlock = b;
 
         updateMatrix();
+    }
 
+    public Block getBlock(){
+        return activeBlock;
     }
 
     public void moveLeft(){
@@ -78,18 +96,13 @@ public class Grid {
     private void updateMatrix(){
         ArrayList<Pair<Integer,Integer>> squares = (ArrayList)activeBlock.getSquares();
 
-        System.out.println("Grid before putting in squares");
-        printGrid();
-
-        System.out.println("Square count: " + squares.size());
         for(Pair<Integer,Integer> p: squares){
             int x = p.getKey();
             int y = p.getValue();
 
             matrix[x][y] = 1;
         }
-        System.out.println("Grid after putting in squares");
-        printGrid();
+
         List<Integer> filledRows = getFilledRows();
         if(filledRows.size() != 0) clearFilledRows(filledRows);
     }
@@ -139,6 +152,84 @@ public class Grid {
         clearBlockFromMatrix();
         activeBlock.drop(shortestDistance);
         updateMatrix();
+    }
+
+    private int[][] hardDropReturnMatrix(int[][] m){
+        int[][] nodematrix = copyMatrix(m);
+
+        ArrayList<Pair<Integer, Integer>> squares = (ArrayList)activeBlock.getSquares();
+
+        int shortestDistance = BIGNUM;
+
+        for(Pair<Integer, Integer> b: squares){
+            int r = b.getKey();
+            int c = b.getValue();
+
+            int distance = 0;
+
+            for(int i = r+1; i < nodematrix.length; i++, distance++){
+                if(nodematrix[i][c] == 1 && !squares.contains(new Pair<>(i,c))) break;
+            }
+            if(distance < shortestDistance) shortestDistance = distance;
+        }
+
+        for(Pair<Integer,Integer> p: squares){          // Clear block from nodematrix
+            int x = p.getKey();
+            int y = p.getValue();
+
+            nodematrix[x][y] = 0;
+        }
+
+        for(Pair<Integer, Integer> p: activeBlock.getSquares()){    // Put block into dropped position
+            int pX = p.getKey();
+            int pY = p.getValue();
+
+            nodematrix[pX + shortestDistance][pY] = 1;
+        }
+
+        return nodematrix;
+    }
+
+
+    public List<Node> generateNodes(){     // Generate nodes to evaluate from current state
+        /**
+         Move all the way to the left
+         make node
+         move right
+         make node
+         repeat til all the way to the right **/
+
+        ArrayList<Node> nodeList = new ArrayList<>();
+
+        for(int i = 0; i < 4; i++) {
+            int stateColumn = 0;
+
+            while (!activeBlock.isLeftmost()) {   //  Move all the way to the left
+                moveLeft();
+            }
+
+            while (true) {
+                int nodematrix[][] = hardDropReturnMatrix(matrix);
+                Node node = new Node(nodematrix, stateColumn);
+                nodeList.add(node);
+
+                if (activeBlock.isRightmost()) break;
+                moveRight();
+                stateColumn++;
+
+            }
+
+            moveLeft();
+            moveLeft();     // Arbitrary; moving left so that the block doesn't go out of bounds when rotating
+
+            rotateCW();
+        }
+
+        for (Node n : nodeList) {
+            System.out.println(n.getHeuristic()); // print to test for correct nodes
+        }
+
+        return null;
     }
 
     public void printGrid(){

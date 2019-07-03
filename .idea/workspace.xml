@@ -4,23 +4,9 @@
     <list default="true" id="93e09c45-ced1-4232-a059-578744a76f01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/Block.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/IPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/IPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/JPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/JPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/LPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/LPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/OPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/OPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/SPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/SPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/TPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/TPiece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/ZPiece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Blocks/ZPiece.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Grid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tetrisAI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetrisAI/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Blocks/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/Block.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/IPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/IPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/JPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/JPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/LPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/LPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/OPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/OPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/SPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/SPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/TPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/TPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Blocks/ZPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Blocks/ZPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -35,26 +21,30 @@
     <session id="-1311911498">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="3" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.24" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="22" />
-          <entry key="java" value="13391" />
+          <entry key="java" value="17564" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="13391" />
+          <entry key="JAVA" value="17564" />
           <entry key="PLAIN_TEXT" value="22" />
         </counts>
       </usages-collector>
@@ -62,14 +52,14 @@
         <counts>
           <entry key="fxml" value="4" />
           <entry key="iml" value="1" />
-          <entry key="java" value="83" />
+          <entry key="java" value="96" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="83" />
+          <entry key="JAVA" value="96" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
@@ -77,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+            <state relative-caret-position="353">
+              <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -89,26 +79,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+            <state relative-caret-position="602">
+              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <folding>
+                <element signature="e#469#470#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,7 +123,9 @@
       <find>pieces:</find>
       <find>getrandompiece</find>
       <find>system.out.</find>
+      <find>square</find>
       <find>printgrid</find>
+      <find>updatematrix</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/sample</dir>
@@ -160,11 +152,12 @@
         <option value="$PROJECT_DIR$/src/Blocks/LPiece.java" />
         <option value="$PROJECT_DIR$/src/Blocks/IPiece.java" />
         <option value="$PROJECT_DIR$/src/Blocks/ZPiece.java" />
-        <option value="$PROJECT_DIR$/src/Blocks/Block.java" />
         <option value="$PROJECT_DIR$/src/Blocks/JPiece.java" />
         <option value="$PROJECT_DIR$/src/Blocks/SPiece.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Blocks/Block.java" />
         <option value="$PROJECT_DIR$/src/Grid.java" />
+        <option value="$PROJECT_DIR$/src/Node.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -179,9 +172,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,13 +196,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="saw&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.xml.ws/com/sun/xml/internal/messaging/saaj/util/stax/SaajStaxWriter.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559977214828" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562175781496" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -287,11 +280,20 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28836834" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31260097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -300,14 +302,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2890511" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2890511" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.329927" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329927" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329927" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.329927" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -318,6 +320,32 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -345,33 +373,10 @@
     <entry file="file://$PROJECT_DIR$/src/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/PieceRandomizer.java" />
     <entry file="file://$PROJECT_DIR$/src/Player.java" />
-    <entry file="file://$PROJECT_DIR$/src/Blocks/LPiece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/TPiece.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/OPiece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -379,9 +384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="59" selection-end-line="40" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -389,29 +391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/JPiece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Blocks/SPiece.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -419,10 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="56" column="25" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
-          <folding>
-            <element signature="e#1415#1416#0" expanded="true" />
-            <element signature="e#1455#1456#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -437,37 +412,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="2620" selection-start-line="2620" selection-end-line="2620" />
-          <folding>
-            <element signature="e#96762#96763#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Blocks/LPiece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/JPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Blocks/Block.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="-115">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1415#1416#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/SPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Blocks/OPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="115" column="9" lean-forward="true" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+        <state relative-caret-position="353">
+          <caret line="233" lean-forward="true" selection-start-line="233" selection-end-line="233" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
