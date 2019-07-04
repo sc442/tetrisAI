@@ -239,12 +239,12 @@ public class Grid {
             bestNode = (bestNode==null || n.getHeuristic() < bestNode.getHeuristic()) ? n:bestNode;
         }
 
-        System.out.println("Best move");
-        System.out.println("---------");
-        System.out.println("Rotation: " + bestNode.getRotationState());
-        System.out.println("Column: " + bestNode.getCountFromLeft());
-        System.out.println("Heuristic: " + bestNode.getHeuristic());
-        System.out.println("");
+//        System.out.println("Best move");
+//        System.out.println("---------");
+//        System.out.println("Rotation: " + bestNode.getRotationState());
+//        System.out.println("Column: " + bestNode.getCountFromLeft());
+//        System.out.println("Heuristic: " + bestNode.getHeuristic());
+//        System.out.println("");
 
         for(int i = 0; i < bestNode.getRotationState(); i++){
             rotateCW();
@@ -261,6 +261,29 @@ public class Grid {
 
     }
 
+    public boolean isDead(){
+
+        boolean isDead = false;
+
+        int maxheight = 0;
+
+        for(int col = 0; col < matrix[0].length; col++){
+
+            int height = matrix.length-1;
+
+            for(int row = 3; row < matrix.length; row++){  // Skip the active block
+                if(matrix[row][col] == 1) break;
+                height--;
+            }
+            maxheight = (height>maxheight)?height:maxheight;
+
+        }
+
+        if(maxheight > 17) isDead = true;
+
+        return isDead;
+    }
+
     public void printGrid(){
         for(int i = 0; i < matrix.length; i++){
             for(int j = 0; j < matrix[i].length; j++){
@@ -271,5 +294,4 @@ public class Grid {
 
         System.out.println();
     }
-
 }

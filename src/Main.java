@@ -11,12 +11,11 @@ import javafx.stage.Stage;
 import Blocks.*;
 import javafx.util.Duration;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Main extends Application {
 
-    private static final int MILLISECOND_DELAY = 1000;
+    private static final int MILLISECOND_DELAY = 500;
 
     private static final int COLUMN_COUNT = 10;
     private static final int ROW_COUNT = 20;
@@ -24,6 +23,7 @@ public class Main extends Application {
 
     GridPane gridPane;
     Grid grid;
+    Bag bag;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -50,6 +50,8 @@ public class Main extends Application {
         gridPane.setHgap(1);
         gridPane.setVgap(1);
 
+        bag = new Bag();
+
         Scene scene = new Scene(gridPane, 300, 450);
 
         primaryStage.setScene(scene);
@@ -65,18 +67,17 @@ public class Main extends Application {
     }
 
     private void step(){
-        List<Node> nodes = grid.generateNodes();            /* TODO: Clean up gameplay code process
+
+        if(!grid.isDead()) {
+            List<Node> nodes = grid.generateNodes();            /* TODO: Clean up gameplay code process
                                                                     it looks awful rn */
 
-        for(Node n : nodes){
-            n.printGrid();
+            grid.playBestMove(nodes);
+            updateGridPane();
+            Block b = getRandomPiece();
+            grid.insertBlock(b);
+            updateGridPane();
         }
-
-        grid.playBestMove(nodes);
-        updateGridPane();
-        Block b = getRandomPiece();
-        grid.insertBlock(b);
-        updateGridPane();
     }
 
     private void keyPressHandler(KeyEvent e) {
@@ -118,27 +119,7 @@ public class Main extends Application {
     }
 
     private Block getRandomPiece(){
-        Random rand = new Random();
-        int randomNum = rand.nextInt(7);
-
-        switch(randomNum){
-            case 0:
-                return new IPiece();
-            case 1:
-                return new JPiece();
-            case 2:
-                return new LPiece();
-            case 3:
-                return new OPiece();
-            case 4:
-                return new SPiece();
-            case 5:
-                return new TPiece();
-            case 6:
-                return new ZPiece();
-            default:
-                return new TPiece();
-        }
+        return bag.getBlock();
     }
 
 
