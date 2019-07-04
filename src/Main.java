@@ -52,7 +52,15 @@ public class Main extends Application {
         grid.insertBlock(block);
         updateGridPane();
 
-        grid.generateNodes();
+        for(int i = 0; i < 5; i++) {
+            List<Node> nodes = grid.generateNodes();            /* TODO: Clean up gameplay code process
+                                                                    it looks awful rn */
+            grid.playBestMove(nodes);
+            updateGridPane();
+            Block b = getRandomPiece();
+            grid.insertBlock(b);
+            updateGridPane();
+        }
     }
 
     private void keyPressHandler(KeyEvent e) {
@@ -77,16 +85,6 @@ public class Main extends Application {
             grid.rotateCW();
             updateGridPane();
         }
-
-    }
-
-    private void playBestMove(List<Node> nodes){
-        Node bestNode = null;
-        for(Node n : nodes){
-            // Get the best node with the lowest heuristic
-            bestNode = (bestNode==null || n.getHeuristic() < bestNode.getHeuristic()) ? n:bestNode;
-        }
-
 
     }
 

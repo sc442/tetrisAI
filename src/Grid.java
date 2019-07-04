@@ -229,7 +229,25 @@ public class Grid {
             System.out.println(n.getHeuristic()); // print to test for correct nodes
         }
 
-        return null;
+        return nodeList;
+    }
+
+    public void playBestMove(List<Node> nodes){
+        Node bestNode = null;
+        for(Node n : nodes){
+            // Get the best node with the lowest heuristic
+            bestNode = (bestNode==null || n.getHeuristic() < bestNode.getHeuristic()) ? n:bestNode;
+        }
+
+        while (!activeBlock.isLeftmost()) {   //  Move all the way to the left
+            moveLeft();
+        }
+
+        for(int i = 0; i < bestNode.getCountFromLeft(); i++){
+            moveRight();
+        }
+        hardDrop();
+
     }
 
     public void printGrid(){
