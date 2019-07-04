@@ -3,10 +3,12 @@ public class Node{
     private int matrix[][];
     private int heuristic;
     private int countFromLeft;
+    private int rotationState;
 
-    public Node(int[][] m, int f){
+    public Node(int[][] m, int f, int state){
         matrix = m;
         countFromLeft = f;
+        rotationState = state;
         heuristic = evaluateHeuristic();
     }
 
@@ -48,7 +50,6 @@ public class Node{
         int bumpiness = 0;
         //TODO: Evaluate bumpiness
         return bumpiness;
-
     }
 
     public int getHeuristic(){
@@ -57,6 +58,10 @@ public class Node{
 
     public int getCountFromLeft(){
         return countFromLeft;
+    }
+
+    public int getRotationState(){
+        return rotationState;
     }
 
     public void printGrid(){

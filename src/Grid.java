@@ -210,7 +210,7 @@ public class Grid {
 
             while (true) {
                 int nodematrix[][] = hardDropReturnMatrix(matrix);
-                Node node = new Node(nodematrix, stateColumn);
+                Node node = new Node(nodematrix, stateColumn, i);
                 nodeList.add(node);
 
                 if (activeBlock.isRightmost()) break;
@@ -225,9 +225,9 @@ public class Grid {
             rotateCW();
         }
 
-        for (Node n : nodeList) {
-            System.out.println(n.getHeuristic()); // print to test for correct nodes
-        }
+//        for (Node n : nodeList) {
+//            System.out.println(n.getHeuristic()); // print to test for correct nodes
+//        }
 
         return nodeList;
     }
@@ -237,6 +237,10 @@ public class Grid {
         for(Node n : nodes){
             // Get the best node with the lowest heuristic
             bestNode = (bestNode==null || n.getHeuristic() < bestNode.getHeuristic()) ? n:bestNode;
+        }
+
+        for(int i = 0; i < bestNode.getRotationState(); i++){
+            rotateCW();
         }
 
         while (!activeBlock.isLeftmost()) {   //  Move all the way to the left

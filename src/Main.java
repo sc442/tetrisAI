@@ -1,6 +1,6 @@
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -9,12 +9,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import Blocks.*;
+import javafx.util.Duration;
 
 import java.util.List;
 import java.util.Random;
 
 
 public class Main extends Application {
+
+    private static final int MILLISECOND_DELAY = 500;
+
 
     private static final int COLUMN_COUNT = 10;
     private static final int ROW_COUNT = 20;
@@ -26,7 +30,16 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         setUp(primaryStage);
-        playGame();
+        initiateGame();
+        autoplayGame();
+    }
+
+    private void autoplayGame() {
+        var frame = new KeyFrame(Duration.millis(MILLISECOND_DELAY), e -> step());
+        var animation = new Timeline();
+        animation.setCycleCount(Timeline.INDEFINITE);
+        animation.getKeyFrames().add(frame);
+        animation.play();
     }
 
     private void setUp(Stage primaryStage){
@@ -47,20 +60,23 @@ public class Main extends Application {
         scene.setOnKeyPressed(e->keyPressHandler(e));
     }
 
-    private void playGame(){                // For now, gets a random piece and inserts it into grid
+    private void initiateGame(){                // For now, gets a random piece and inserts it into grid
         Block block = getRandomPiece();
         grid.insertBlock(block);
         updateGridPane();
+    }
 
-        for(int i = 0; i < 5; i++) {
-            List<Node> nodes = grid.generateNodes();            /* TODO: Clean up gameplay code process
+    private void step(){
+        List<Node> nodes = grid.generateNodes();            /* TODO: Clean up gameplay code process
                                                                     it looks awful rn */
-            grid.playBestMove(nodes);
-            updateGridPane();
-            Block b = getRandomPiece();
-            grid.insertBlock(b);
-            updateGridPane();
-        }
+
+        System.out.println("Node count: " + nodes.size());
+
+        grid.playBestMove(nodes);
+        updateGridPane();
+        Block b = getRandomPiece();
+        grid.insertBlock(b);
+        updateGridPane();
     }
 
     private void keyPressHandler(KeyEvent e) {
@@ -75,7 +91,7 @@ public class Main extends Application {
         if(e.getCode() == KeyCode.SPACE){
             grid.hardDrop();
             updateGridPane();
-            playGame();
+            initiateGame();
         }
         if(e.getCode() == KeyCode.Z){
             grid.rotateCCW();
