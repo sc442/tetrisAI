@@ -201,7 +201,7 @@ public class Grid {
 
         ArrayList<Node> nodeList = new ArrayList<>();
 
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < 4; i++) {        // for each rotation
             int stateColumn = 0;
 
             while (!activeBlock.isLeftmost()) {   //  Move all the way to the left
@@ -238,6 +238,13 @@ public class Grid {
             // Get the best node with the lowest heuristic
             bestNode = (bestNode==null || n.getHeuristic() < bestNode.getHeuristic()) ? n:bestNode;
         }
+
+        System.out.println("Best move");
+        System.out.println("---------");
+        System.out.println("Rotation: " + bestNode.getRotationState());
+        System.out.println("Column: " + bestNode.getCountFromLeft());
+        System.out.println("Heuristic: " + bestNode.getHeuristic());
+        System.out.println("");
 
         for(int i = 0; i < bestNode.getRotationState(); i++){
             rotateCW();

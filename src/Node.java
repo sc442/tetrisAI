@@ -36,12 +36,20 @@ public class Node{
             maxheight = (height>maxheight)?height:maxheight;
 
         }
-        //TODO: Evaluate height
+        //TODO: Adjust points
         return maxheight;
     }
 
     private int evaluateGaps(){
         int gaps = 0;
+
+        for(int col = 0; col < matrix[0].length; col++){
+            boolean encountered = false;
+            for(int row = 0; row < matrix.length; row++){
+                if(matrix[row][col] == 1) encountered = true;
+                if(encountered && matrix[row][col] == 0) gaps++;
+            }
+        }
         //TODO: Evaluate gaps
         return gaps;
     }

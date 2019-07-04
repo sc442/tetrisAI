@@ -14,11 +14,9 @@ import javafx.util.Duration;
 import java.util.List;
 import java.util.Random;
 
-
 public class Main extends Application {
 
-    private static final int MILLISECOND_DELAY = 500;
-
+    private static final int MILLISECOND_DELAY = 1000;
 
     private static final int COLUMN_COUNT = 10;
     private static final int ROW_COUNT = 20;
@@ -70,7 +68,9 @@ public class Main extends Application {
         List<Node> nodes = grid.generateNodes();            /* TODO: Clean up gameplay code process
                                                                     it looks awful rn */
 
-        System.out.println("Node count: " + nodes.size());
+        for(Node n : nodes){
+            n.printGrid();
+        }
 
         grid.playBestMove(nodes);
         updateGridPane();
