@@ -21,7 +21,7 @@ import java.util.*;
 
 public class Main extends Application {
 
-    private static final int MILLISECOND_DELAY = 100;
+    private static final int MILLISECOND_DELAY = 200;
 
     private static final int COLUMN_COUNT = 10;
     private static final int ROW_COUNT = 20;
