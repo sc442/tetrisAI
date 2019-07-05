@@ -15,7 +15,7 @@ import java.util.*;
 
 public class Main extends Application {
 
-    private static final int MILLISECOND_DELAY = 500;
+    private static final int MILLISECOND_DELAY = 200;
 
     private static final int COLUMN_COUNT = 10;
     private static final int ROW_COUNT = 20;
@@ -111,8 +111,42 @@ public class Main extends Application {
         for(int i = 0; i < array.length; i++){
             for(int j = 0; j < array[0].length; j++){
                 Rectangle rec;
-                if(array[i][j] == 1) rec = new Rectangle(20,20, Color.GREEN);
-                else rec = new Rectangle(20,20,Color.LIGHTGRAY);
+
+                switch(array[i][j]){
+                    case 1:
+                        // IPiece
+                        rec = new Rectangle(20,20, Color.DEEPSKYBLUE);
+                        break;
+                    case 2:
+                        // JPiece
+                        rec = new Rectangle(20,20, Color.ROYALBLUE);
+                        break;
+                    case 3:
+                        // LPiece
+                        rec = new Rectangle(20,20, Color.DARKORANGE);
+                        break;
+                    case 4:
+                        // OPiece
+                        rec = new Rectangle(20,20, Color.YELLOW);
+                        break;
+                    case 5:
+                        // SPiece
+                        rec = new Rectangle(20,20, Color.LIMEGREEN);
+                        break;
+                    case 6:
+                        // TPiece
+                        rec = new Rectangle(20,20, Color.VIOLET);
+                        break;
+                    case 7:
+                        // ZPiece
+                        rec = new Rectangle(20,20, Color.RED);
+                        break;
+                    default:
+                        // Empty
+                        rec = new Rectangle(20,20,Color.LIGHTGRAY);
+                        break;
+                }
+
                 gridPane.add(rec, j, i);
             }
         }

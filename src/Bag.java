@@ -12,10 +12,6 @@ public class Bag {
     public Bag(){
         currentLocation = 0;
 
-
-        //TODO: A numbered list
-        // If a number, return a new block
-
         pieces = Arrays.asList(0,1,2,3,4,5,6);
         Collections.shuffle(pieces);
     }
@@ -23,7 +19,6 @@ public class Bag {
     public Block getBlock(){
         int b = (int)pieces.get(currentLocation);
 
-        System.out.println("Block pulled: " + b);
         currentLocation++;
 
         if(currentLocation > 6){

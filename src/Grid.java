@@ -96,15 +96,41 @@ public class Grid {
     private void updateMatrix(){
         ArrayList<Pair<Integer,Integer>> squares = (ArrayList)activeBlock.getSquares();
 
+        int colorCode = getBlockColorNumber(activeBlock);
+
         for(Pair<Integer,Integer> p: squares){
             int x = p.getKey();
             int y = p.getValue();
 
-            matrix[x][y] = 1;
+
+            matrix[x][y] = colorCode;
+
         }
 
         List<Integer> filledRows = getFilledRows();
         if(filledRows.size() != 0) clearFilledRows(filledRows);
+    }
+
+    private int getBlockColorNumber(Block b){
+         String blockName = b.getClass().getName();
+
+         if(blockName.equals("Blocks.IPiece")) {
+             return 1;
+         }else if(blockName.equals("Blocks.JPiece")){
+             return 2;
+         }else if(blockName.equals("Blocks.LPiece")){
+             return 3;
+         }else if(blockName.equals("Blocks.OPiece")){
+             return 4;
+         }else if(blockName.equals("Blocks.SPiece")){
+             return 5;
+         }else if(blockName.equals("Blocks.TPiece")){
+             return 6;
+         }else if(blockName.equals("Blocks.ZPiece")){
+             return 7;
+         }else{
+             return 1;
+         }
     }
 
     private List<Integer> getFilledRows(){
@@ -113,7 +139,7 @@ public class Grid {
         for(int i = 0; i < matrix.length; i++){
             int squares = 0;
             for(int j = 0; j < matrix[0].length; j++){
-                if(matrix[i][j] == 1) squares++;
+                if(matrix[i][j] != 0) squares++;
             }
             if(squares == matrix[0].length) rowsToClear.add(i);
         }
@@ -145,7 +171,7 @@ public class Grid {
             int distance = 0;
 
             for(int i = r+1; i < matrix.length; i++, distance++){
-                if(matrix[i][c] == 1 && !squares.contains(new Pair<>(i,c))) break;
+                if(matrix[i][c] != 0 && !squares.contains(new Pair<>(i,c))) break;
             }
             if(distance < shortestDistance) shortestDistance = distance;
         }
@@ -168,7 +194,7 @@ public class Grid {
             int distance = 0;
 
             for(int i = r+1; i < nodematrix.length; i++, distance++){
-                if(nodematrix[i][c] == 1 && !squares.contains(new Pair<>(i,c))) break;
+                if(nodematrix[i][c] != 0 && !squares.contains(new Pair<>(i,c))) break;
             }
             if(distance < shortestDistance) shortestDistance = distance;
         }
@@ -184,7 +210,9 @@ public class Grid {
             int pX = p.getKey();
             int pY = p.getValue();
 
-            nodematrix[pX + shortestDistance][pY] = 1;
+
+
+            nodematrix[pX + shortestDistance][pY] = getBlockColorNumber(activeBlock);
         }
 
         return nodematrix;
@@ -272,7 +300,7 @@ public class Grid {
             int height = matrix.length-1;
 
             for(int row = 3; row < matrix.length; row++){  // Skip the active block
-                if(matrix[row][col] == 1) break;
+                if(matrix[row][col] != 0) break;
                 height--;
             }
             maxheight = (height>maxheight)?height:maxheight;
