@@ -1,6 +1,6 @@
 
 /*******
- * All possible next states for a particular Grid state
+ * Represents a possible next state that the AI considers for a particular Grid
  * When generated, contains a matrix of the possible move, the move's position from the leftmost column,
  * and the block's rotation before dropping.
  *
