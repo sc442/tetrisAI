@@ -1,4 +1,11 @@
-import java.util.Arrays;
+
+/*******
+ * All possible next states for a particular Grid state
+ * When generated, contains a matrix of the possible move, the move's position from the leftmost column,
+ * and the block's rotation before dropping.
+ *
+ * @Author Seung-Woo Choi
+ */
 
 public class Node{
 

@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**********
+ * Code for the Grid, and to manipulate the blocks in the grid.
+ *
+ * @Author Seung-Woo Choi
+ */
+
 public class Grid {
 
     private static final int BIGNUM = 99999;

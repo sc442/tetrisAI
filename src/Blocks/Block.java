@@ -5,6 +5,13 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+/****
+ * Parent class for all pieces.
+ * Contains the coordinates for the squares in a piece, manipulates the coordinates of the piece
+ *
+ * @Author Seung-Woo Choi
+ */
+
 public abstract class Block {
 
     protected ArrayList<Pair<Integer,Integer>> squares;

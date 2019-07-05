@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**********
+ * Generates next blocks in modern Tetris game style
+ *
+ * @Author Seung-Woo Choi
+ */
+
 public class Bag {
     List pieces;
     int currentLocation;
