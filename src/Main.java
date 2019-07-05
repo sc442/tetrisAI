@@ -143,7 +143,7 @@ public class Main extends Application {
                         break;
                     default:
                         // Empty
-                        rec = new Rectangle(20,20,Color.LIGHTGRAY);
+                        rec = new Rectangle(20,20,Color.LIGHTGREY);
                         break;
                 }
 

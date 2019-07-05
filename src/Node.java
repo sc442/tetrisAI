@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Node{
 
     private int matrix[][];
-    private int heuristic;
+    private double heuristic;
     private int countFromLeft;
     private int rotationState;
 
@@ -14,12 +14,12 @@ public class Node{
         heuristic = evaluateHeuristic();
     }
 
-    private int evaluateHeuristic(){
-        int heuristicScore =
-                evaluateMaxHeight()/10+
-                evaluateGaps()+
-                evaluateBumpiness()/10-
-                evaluateFullRows();     // Lower the heuristic, the better!
+    private double evaluateHeuristic(){
+        double heuristicScore =
+                evaluateMaxHeight()
+                +(10)*evaluateGaps()
+                +evaluateBumpiness()
+                -evaluateFullRows();     // Lower the heuristic, the better!
 
         return heuristicScore;
     }
@@ -117,7 +117,7 @@ public class Node{
         return bumpiness;
     }
 
-    public int getHeuristic(){
+    public double getHeuristic(){
         return heuristic;
     }
 
