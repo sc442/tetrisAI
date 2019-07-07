@@ -23,8 +23,8 @@ public class Node{
 
     private double evaluateHeuristic(){
         double heuristicScore =
-                evaluateMaxHeight()
-                +(10)*evaluateGaps()
+                +evaluateMaxHeight()
+                +(8)*evaluateGaps()
                 +evaluateBumpiness()
                 -evaluateFullRows();     // Lower the heuristic, the better!
 
