@@ -11,6 +11,6 @@ Download the src folder. Run Main.java using your IDE of choice or run it in ter
 
 `javac Main.java`
 
-`java main`
+`java Main`
 
 [Demonstration on YouTube](https://youtu.be/Y4ReyIv0r2c)
